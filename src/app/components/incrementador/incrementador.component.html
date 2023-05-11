@@ -1,0 +1,33 @@
+<!--1 Control de Porcentaje-->
+            <!-- ============================================================== -->
+           <!--Btn incrementar porcentaje-->
+            <div class="input-group">
+                <span class="input-group-btn">
+                <button class="btn btn-primary" 
+                  (click)="cambiarValor(-5)"
+                type="button">
+                    <i class="fa fa-minus"></i>
+                </button>
+                </span>
+
+                <!--Slo ingresar num-->
+                <input type="number" class="form-control"
+                [ngClass]="{'is-valid': progreso > 100 || progreso < 0}" 
+                placeholder="progreso"
+                min="0"
+                max="100"
+                (ngModelChange)="onChange($event)"
+                [(ngModel)]="progreso">
+
+
+                <!--Btn disminuir porcentaje-->
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" 
+                    (click)="cambiarValor(+5)"
+                    type="button">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </span>
+            </div>
+            <!-- ============================================================== -->
+             <!--End de 1 Control de Porcentaje-->
